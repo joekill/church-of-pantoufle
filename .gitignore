@@ -1,0 +1,22 @@
+# .NET build output
+bin/
+obj/
+
+# Deploy/log artifacts that ended up in the working folder
+deploy-output/
+deploy.zip
+logs/
+logs.zip
+
+# Local runtime database (regenerated from seed data on the server volume)
+church.db
+*.db-shm
+*.db-wal
+
+# IDE / OS
+.vs/
+.DS_Store
+Thumbs.db
+
+# Local-only Claude settings (keep project-level config, ignore machine-local)
+.claude/settings.local.json

@@ -1,0 +1,25 @@
+# Build artifacts (rebuilt inside the image)
+bin/
+obj/
+deploy-output/
+deploy.zip
+logs/
+logs.zip
+
+# Local dev database — the app creates its own under $HOME/data at runtime
+church.db
+*.db-shm
+*.db-wal
+
+# Version control / IDE / local tooling
+.git/
+.gitignore
+.vs/
+.vscode/
+.claude/
+**/.DS_Store
+
+# Files not needed inside the image
+Dockerfile
+.dockerignore
+README.md

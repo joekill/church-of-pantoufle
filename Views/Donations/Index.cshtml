@@ -1,0 +1,91 @@
+@{
+    ViewData["Title"] = "Donations";
+}
+
+<section class="sacred-section">
+    <div class="container">
+    <div class="section-header">
+        <h1>Tithe to the Warren &mdash; Support the Sacred Mission</h1>
+        <div class="divider"></div>
+    </div>
+
+    @if (TempData["DonationSuccess"] != null)
+    {
+        <div class="alert-sacred mb-4">
+            @TempData["DonationSuccess"]
+        </div>
+    }
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="donation-tier" data-amount="5" data-tier="Kit's Offering">
+                <div class="tier-icon">&#x1F955;</div>
+                <h3>Kit's Offering</h3>
+                <div class="tier-amount">$5</div>
+                <p>A nibble of support</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="donation-tier" data-amount="25" data-tier="Buck's Tribute">
+                <div class="tier-icon">&#x1F955;&#x1F955;</div>
+                <h3>Buck's Tribute</h3>
+                <div class="tier-amount">$25</div>
+                <p>A generous thump</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="donation-tier" data-amount="100" data-tier="Elder Doe's Blessing">
+                <div class="tier-icon">&#x1F955;&#x1F955;&#x1F955;</div>
+                <h3>Elder Doe's Blessing</h3>
+                <div class="tier-amount">$100</div>
+                <p>Wisdom-level generosity</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="donation-tier" data-amount="500" data-tier="Grand Warren Keeper">
+                <div class="tier-icon">&#x1F955;&#x1F955;&#x1F955;&#x1F955;</div>
+                <h3>Grand Warren Keeper</h3>
+                <div class="tier-amount">$500</div>
+                <p>Become one with the Herd</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="donation-form-container">
+        <form asp-controller="Donations" asp-action="Process" method="post" class="sacred-form">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="Amount" id="Amount" value="" />
+            <input type="hidden" name="SelectedTier" id="SelectedTier" value="" />
+
+            <div class="form-group mb-3">
+                <label for="Name">Your Name</label>
+                <input type="text" name="Name" id="Name" class="form-control" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="PrayerIntention">Prayer Intention <span class="text-muted">(optional)</span></label>
+                <textarea name="PrayerIntention" id="PrayerIntention" class="form-control" rows="4" placeholder="Share your prayer intention with the Warren..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-sacred">Present Your Offering</button>
+        </form>
+    </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelectorAll('.donation-tier').forEach(function (tier) {
+            tier.addEventListener('click', function () {
+                document.querySelectorAll('.donation-tier').forEach(function (t) {
+                    t.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                document.getElementById('Amount').value = this.getAttribute('data-amount');
+                document.getElementById('SelectedTier').value = this.getAttribute('data-tier');
+            });
+        });
+    </script>
+}

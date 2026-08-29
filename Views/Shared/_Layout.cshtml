@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Church of Pantoufle</title>
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="stained-glass-border"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-sacred">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">&#x2727; Church of Pantoufle</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sacredNav"
+                        aria-controls="sacredNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="sacredNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">The Warren</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Deeds" asp-action="Index">Sacred Deeds</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Pleasures" asp-action="Index">Divine Pleasures</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Testimonials" asp-action="Index">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Donations" asp-action="Index">Tithe to the Warren</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Doctrine">The Doctrine</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <div class="stained-glass-border"></div>
+    <footer class="footer-sacred">
+        <div class="container">
+            <h5>&#x2727; Church of Pantoufle &#x2727;</h5>
+            <p class="footer-blessing">"May your spirit leap ever higher"</p>
+            <p>The Warren gathers in His name &mdash; The Radiant One, The Eternal Binkier, The Most Holy Lagomorph.</p>
+            <div class="footer-bottom">
+                &copy; @DateTime.Now.Year Church of Pantoufle &mdash; All Thumps Reserved<br />
+                <small>Cuniculopterists &amp; Leporidists United in Sacred Fluffiness</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,500 @@
+/* =============================================
+   Church of Pantoufle — Sacred Mystical Theme
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+    --deep-purple: #2D1B4E;
+    --darker-purple: #1A0F2E;
+    --gold: #D4AF37;
+    --gold-light: #E8CC6E;
+    --cream: #FFF8E7;
+    --cream-dark: #F0E6D0;
+    --text-body: #2A1F3D;
+    --shadow-purple: rgba(45, 27, 78, 0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--text-body);
+    background-color: var(--cream);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand, .nav-link {
+    font-family: 'Cinzel', 'Times New Roman', serif;
+}
+
+/* ---- Navbar ---- */
+.navbar-sacred {
+    background: linear-gradient(135deg, var(--darker-purple), var(--deep-purple));
+    border-bottom: 3px solid var(--gold);
+    padding: 0.8rem 0;
+}
+
+.navbar-sacred .navbar-brand {
+    color: var(--gold) !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar-sacred .nav-link {
+    color: var(--cream) !important;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 0.8rem !important;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-sacred .nav-link:hover,
+.navbar-sacred .nav-link.active {
+    color: var(--gold) !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.navbar-sacred .navbar-toggler {
+    border-color: var(--gold);
+}
+
+.navbar-sacred .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ---- Hero Section ---- */
+.hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--darker-purple);
+}
+
+.hero-section img.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+    filter: brightness(0.7);
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero-overlay h1 {
+    color: var(--gold);
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 2px 2px 8px rgba(0,0,0,0.8);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+    color: var(--cream);
+    font-size: 1.4rem;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ---- Sacred Cards ---- */
+.sacred-card {
+    background: white;
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px var(--shadow-purple);
+    height: 100%;
+}
+
+.sacred-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--shadow-purple);
+}
+
+.sacred-card p {
+    color: var(--text-body);
+}
+
+.sacred-card h3 {
+    color: var(--deep-purple);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.sacred-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* ---- Buttons ---- */
+.btn-sacred {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--darker-purple);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-sacred:hover {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--darker-purple);
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* ---- Section Headers ---- */
+.section-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.section-header h1, .section-header h2 {
+    color: var(--deep-purple);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-header .divider {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-header p {
+    color: #5A4A6E;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* ---- Page Sections ---- */
+.sacred-section {
+    padding: 4rem 0;
+}
+
+.sacred-section:nth-child(even) {
+    background: white;
+}
+
+.sacred-section-dark {
+    background: linear-gradient(135deg, var(--darker-purple), var(--deep-purple));
+    color: var(--cream);
+    padding: 4rem 0;
+}
+
+.sacred-section-dark h2 {
+    color: var(--gold);
+}
+
+/* ---- Stained Glass Border ---- */
+.stained-glass-border {
+    height: 6px;
+    background: linear-gradient(90deg,
+        var(--deep-purple) 0%,
+        var(--gold) 25%,
+        #8B5CF6 50%,
+        var(--gold) 75%,
+        var(--deep-purple) 100%
+    );
+}
+
+/* ---- Deed / Miracle Cards ---- */
+.deed-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px var(--shadow-purple);
+    margin-bottom: 2rem;
+    transition: transform 0.3s;
+}
+
+.deed-card:hover {
+    transform: translateY(-3px);
+}
+
+.deed-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.deed-card .deed-body {
+    padding: 1.5rem;
+}
+
+.deed-card h3 {
+    color: var(--deep-purple);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.deed-card .deed-subtitle {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+/* ---- Pleasures ---- */
+.pleasure-entry {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.pleasure-entry:last-child {
+    border-bottom: none;
+}
+
+.pleasure-entry img {
+    border-radius: 16px;
+    box-shadow: 0 6px 25px var(--shadow-purple);
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.pleasure-entry h3 {
+    color: var(--deep-purple);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pleasure-entry .sacred-subtitle {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.pleasure-entry blockquote {
+    border-left: 4px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #5A4A6E;
+    font-size: 1.15rem;
+}
+
+/* ---- Testimonials ---- */
+.testimonial-card {
+    background: white;
+    border: 1px solid var(--cream-dark);
+    border-left: 5px solid var(--gold);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 12px var(--shadow-purple);
+}
+
+.testimonial-card .testimonial-content {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .testimonial-author {
+    font-family: 'Cinzel', serif;
+    color: var(--deep-purple);
+    font-weight: 600;
+}
+
+.testimonial-card .testimonial-title {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+/* ---- Donation Tiers ---- */
+.donation-tier {
+    background: white;
+    border: 2px solid var(--cream-dark);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    height: 100%;
+    cursor: pointer;
+}
+
+.donation-tier:hover,
+.donation-tier.selected {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+}
+
+.donation-tier .tier-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.donation-tier h4 {
+    color: var(--deep-purple);
+    font-size: 1.2rem;
+}
+
+.donation-tier .tier-amount {
+    color: var(--gold);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+.donation-tier p {
+    color: #5A4A6E;
+    font-style: italic;
+}
+
+/* ---- Forms ---- */
+.sacred-form .form-control,
+.sacred-form .form-select {
+    border: 2px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    transition: border-color 0.3s;
+}
+
+.sacred-form .form-control:focus,
+.sacred-form .form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+.sacred-form label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--deep-purple);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+/* ---- Footer ---- */
+.footer-sacred {
+    background: linear-gradient(135deg, var(--darker-purple), var(--deep-purple));
+    color: var(--cream);
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+.footer-sacred h5 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.footer-sacred .footer-blessing {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-sacred .footer-bottom {
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 248, 231, 0.6);
+}
+
+/* ---- Doctrine ---- */
+.thumpmandment {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.thumpmandment:last-child {
+    border-bottom: none;
+}
+
+.thumpmandment .number {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--gold);
+    min-width: 50px;
+    display: inline-block;
+}
+
+/* ---- Success Messages ---- */
+.alert-sacred {
+    background: linear-gradient(135deg, var(--deep-purple), #3D2B5E);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    .hero-overlay p {
+        font-size: 1.1rem;
+    }
+    .sacred-section {
+        padding: 2rem 0;
+    }
+    .pleasure-entry img {
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ---- Animations ---- */
+@keyframes gentle-glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+}
+
+.glow-text {
+    animation: gentle-glow 3s ease-in-out infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

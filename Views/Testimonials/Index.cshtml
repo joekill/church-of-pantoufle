@@ -1,0 +1,41 @@
+@model IEnumerable<ChurchOfPantoufle.Models.Testimonial>
+@{
+    ViewData["Title"] = "Testimonials";
+}
+
+<section class="sacred-section">
+    <div class="container">
+    <div class="section-header">
+        <h1>Voices from the Warren</h1>
+        <div class="divider"></div>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert-sacred">
+            @TempData["Success"]
+        </div>
+    }
+
+    <div class="testimonials-list">
+        @foreach (var testimonial in Model)
+        {
+            <div class="testimonial-card reveal">
+                <div class="testimonial-content">
+                    <p>&ldquo;@testimonial.Content&rdquo;</p>
+                </div>
+                <div class="testimonial-footer">
+                    <span class="testimonial-author">— @testimonial.AuthorName</span>
+                    @if (testimonial.WarrenName != null)
+                    {
+                        <span class="testimonial-title">@testimonial.WarrenName</span>
+                    }
+                    <small>@testimonial.DateSubmitted.ToString("MMMM dd, yyyy")</small>
+                </div>
+            </div>
+        }
+    </div>
+
+    @await Html.PartialAsync("_SubmitPartial", new ChurchOfPantoufle.Models.Testimonial())
+    </div>
+</section>
