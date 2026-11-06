@@ -1,0 +1,40 @@
+@model IEnumerable<ChurchOfPantoufle.Models.Testimonial>
+@{
+    ViewData["Title"] = "Review Testimonials";
+    var pending = Model.Where(t => !t.IsApproved).ToList();
+    var approved = Model.Where(t => t.IsApproved).ToList();
+}
+
+<section class="sacred-section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Review Testimonials</h1>
+            <div class="divider"></div>
+        </div>
+
+        @if (TempData["AdminMessage"] != null)
+        {
+            <div class="alert-sacred">@TempData["AdminMessage"]</div>
+        }
+
+        <h2>Awaiting Review (@pending.Count)</h2>
+        @if (pending.Count == 0)
+        {
+            <p>Nothing is waiting for review.</p>
+        }
+        @foreach (var testimonial in pending)
+        {
+            <partial name="_AdminTestimonial" model="testimonial" />
+        }
+
+        <h2 class="mt-4">Published (@approved.Count)</h2>
+        @foreach (var testimonial in approved)
+        {
+            <partial name="_AdminTestimonial" model="testimonial" />
+        }
+
+        <form asp-controller="Admin" asp-action="Logout" method="post" class="mt-4">
+            <button type="submit" class="btn btn-outline-secondary">Log out</button>
+        </form>
+    </div>
+</section>

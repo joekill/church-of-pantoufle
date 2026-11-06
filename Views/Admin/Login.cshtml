@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Elder Login";
+}
+
+<section class="sacred-section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Elder Login</h1>
+            <div class="divider"></div>
+        </div>
+
+        @if (ViewData["LoginError"] != null)
+        {
+            <p class="text-danger" role="alert">@ViewData["LoginError"]</p>
+        }
+
+        <form asp-controller="Admin" asp-action="Login" method="post" class="sacred-form">
+            <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" class="form-control" autocomplete="current-password" required autofocus />
+            </div>
+            <button type="submit" class="btn-sacred">Enter the Circle of Whiskers</button>
+        </form>
+    </div>
+</section>
