@@ -23,7 +23,7 @@ RUN dotnet publish ChurchOfPantoufle.csproj \
 
 # ---- Runtime stage ------------------------------------------------------
 # The actual arm64 image that runs on the Pi.
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS runtime
 WORKDIR /app
 
 # Program.cs stores church.db at $HOME/data/church.db. Pin HOME to a known
