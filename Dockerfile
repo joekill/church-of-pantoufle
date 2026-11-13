@@ -4,7 +4,7 @@
 # Runs natively on the CI runner's architecture (amd64) and cross-publishes
 # for the Pi's architecture (arm64) via `-a $TARGETARCH`. This avoids slow
 # QEMU emulation — the SDK never runs under emulation.
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 ARG TARGETARCH
 WORKDIR /src
 
